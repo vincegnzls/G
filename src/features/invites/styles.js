@@ -5,8 +5,8 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: '#FFFFFF',
     },
-    friendsLogo: {
-        height: 35,
-        width: 35,
+    plansLogo: {
+        height: 30,
+        width: 30,
     },
 })

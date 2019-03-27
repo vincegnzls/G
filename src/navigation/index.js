@@ -6,7 +6,7 @@ import NavigationService from './service'
 class ApplicationNavigatorContainer extends Component {
     componentDidMount() {
         setTimeout(() => {
-            NavigationService.navigate('Home')
+            NavigationService.navigate('HOME')
         }, 0.1)
     }
 

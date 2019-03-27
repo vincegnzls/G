@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import { View, Image, Text } from 'react-native'
 import styles from './styles'
-import plansLogo from '../../assets/icons/navigator/plans.png'
-import plansSelectedLogo from '../../assets/icons/navigator/plans-selected.png'
 
-class Plans extends Component {
+class Invites extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Plans</Text>
+                <Text>Invites</Text>
             </View>
         )
     }
 }
 
-export default Plans
+export default Invites
