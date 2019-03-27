@@ -47,11 +47,12 @@ const PlansTabNav = createMaterialTopTabNavigator(
             },
             labelStyle: {
                 fontFamily: Fonts.MuliBold,
-                color: '#6B6B6B',
             },
             indicatorStyle: {
                 backgroundColor: '#9663EF',
             },
+            activeTintColor: '#9663EF',
+            inactiveTintColor: '#6B6B6B',
             pressColor: '#6B6B6B',
             showLabel: true,
         },
