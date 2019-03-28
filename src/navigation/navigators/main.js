@@ -20,6 +20,8 @@ import planStyles from '../../features/plans/styles'
 
 import { Fonts } from '../../utils/fonts'
 
+import { HomeStack, AddStatusStack } from './home'
+
 const headerLogo = require('../../assets/icons/g-logo.png')
 
 const headerImage = (
@@ -72,8 +74,8 @@ PlansTabNav.navigationOptions = {
 
 const MainTabNav = createMaterialTopTabNavigator(
     {
+        [screenNames.HOME_STACK]: { screen: HomeStack },
         [screenNames.FRIENDS]: { screen: Friends },
-        [screenNames.HOME]: { screen: Home },
         [screenNames.PLANS]: { screen: PlansTabNav },
     },
     {

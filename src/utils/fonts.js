@@ -6,4 +6,5 @@ export const Fonts = {
     MuliSemiBold: 'Muli-SemiBold',
     MuliBold: 'Muli-Bold',
     MuliExtraBold: 'Muli-ExtraBold',
+    NunitoExtraBold: 'Nunito-ExtraBold',
 }

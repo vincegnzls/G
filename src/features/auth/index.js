@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import { View, Image, Text } from 'react-native'
-import NavigationService from '../../navigation/service';
+import NavigationService from '../../navigation/service'
 import styles from './styles'
 import logo from '../../assets/icons/g-logo.png'
 import LoginButton from './components/LoginButton'
 
+import * as screenNames from '../../navigation/screen_names'
+
 class Login extends Component {
     onLogin = () => {
-        NavigationService.navigate('Main')
+        NavigationService.navigate(screenNames.MAIN)
     }
 
     render() {
