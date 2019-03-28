@@ -1,6 +1,6 @@
 import { createSwitchNavigator, createAppContainer } from 'react-navigation'
 import AuthNavigator from './authentication'
-import MainNavigator from './main'
+import MainNavigator from './drawer'
 import * as screenNames from '../screen_names'
 
 export const createRootNavigator = (signedIn = true) => {

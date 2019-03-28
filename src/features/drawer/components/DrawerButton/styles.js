@@ -3,10 +3,10 @@ import { responsiveWidth } from 'react-native-responsive-dimensions'
 
 export default StyleSheet.create({
     drawerButton: {
-        width: responsiveWidth(10),
-        height: responsiveWidth(10),
+        width: responsiveWidth(9),
+        height: responsiveWidth(9),
         borderRadius: responsiveWidth(25),
-        borderWidth: 1,
+        borderWidth: 2,
         borderColor: '#CC52FF',
         backgroundColor: '#ffffff',
         marginLeft: 20,

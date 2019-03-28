@@ -1,17 +1,17 @@
 import React from 'react'
 import { Platform, Image } from 'react-native'
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation'
 import {
-    createMaterialTopTabNavigator,
-    createStackNavigator,
-    createDrawerNavigator,
-} from 'react-navigation'
-import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions'
+    responsiveHeight,
+    responsiveWidth,
+    responsiveFontSize,
+} from 'react-native-responsive-dimensions'
 import * as screenNames from '../screen_names'
+
 import Home from '../../features/home'
 import Friends from '../../features/friends'
 import Plans from '../../features/plans'
 import Invites from '../../features/invites'
-import About from '../../features/drawer/containers/about'
 import DrawerButton from '../../features/drawer/components/DrawerButton'
 
 import plansLogo from '../../assets/icons/navigator/plans.png'
@@ -25,7 +25,10 @@ const headerLogo = require('../../assets/icons/g-logo.png')
 const headerImage = (
     <Image
         source={headerLogo}
-        style={{ width: responsiveWidth(15), height: responsiveWidth(15) }}
+        style={{
+            width: responsiveWidth(12),
+            height: responsiveWidth(12),
+        }}
     />
 )
 
@@ -39,8 +42,6 @@ const PlansTabNav = createMaterialTopTabNavigator(
         tabBarOptions: {
             style: {
                 backgroundColor: '#ffffff',
-                paddingBottom: 5,
-                paddingTop: 5,
                 elevation: 0,
                 shadowOpacity: 0,
                 borderBottomWidth: 0,
@@ -55,6 +56,7 @@ const PlansTabNav = createMaterialTopTabNavigator(
             inactiveTintColor: '#6B6B6B',
             pressColor: '#6B6B6B',
             showLabel: true,
+            upperCaseLabel: false,
         },
     }
 )
@@ -84,8 +86,8 @@ const MainTabNav = createMaterialTopTabNavigator(
                 shadowRadius: 5,
                 shadowColor: '#000000',
                 shadowOffset: { height: 0, width: 0 },
-                paddingBottom: 10,
-                paddingTop: 10,
+                paddingTop: responsiveHeight(0.5),
+                paddingBottom: responsiveHeight(0.5),
             },
             indicatorStyle: {
                 opacity: 0,
@@ -98,7 +100,7 @@ const MainTabNav = createMaterialTopTabNavigator(
     }
 )
 
-const MainStackNav = createStackNavigator(
+export const MainStackNav = createStackNavigator(
     {
         [screenNames.MAIN_TAB]: { screen: MainTabNav },
     },
@@ -106,13 +108,15 @@ const MainStackNav = createStackNavigator(
         defaultNavigationOptions: {
             headerStyle: {
                 backgroundColor: '#ffffff',
-                elevation: 5,
+                elevation: 6,
                 shadowOpacity: 0.2,
                 shadowRadius: 5,
                 shadowColor: '#000000',
                 shadowOffset: { height: 0, width: 0 },
-                height: Platform.OS === 'ios' ? responsiveHeight(7) : responsiveHeight(9),
+                borderBottomWidth: 0,
+                height: responsiveHeight(8),
                 paddingBottom: Platform.OS === 'ios' ? responsiveHeight(1.5) : 0,
+                paddingTop: Platform.OS === 'ios' ? responsiveHeight(2) : 0,
             },
             headerTitle: headerImage,
             headerLeft: <DrawerButton />,
@@ -120,37 +124,3 @@ const MainStackNav = createStackNavigator(
         headerLayoutPreset: 'center',
     }
 )
-
-const AboutStackNav = createStackNavigator(
-    {
-        [screenNames.ABOUT]: { screen: About },
-    },
-    {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: '#ffffff',
-                elevation: 0,
-                shadowOpacity: 0,
-                borderBottomWidth: 0,
-                marginBottom: 10,
-                marginTop: 10,
-            },
-            headerTitle: 'CREATE A PLAN',
-        },
-        headerLayoutPreset: 'center',
-    }
-)
-
-const MainDrawerNav = createDrawerNavigator(
-    {
-        Home: { screen: MainStackNav },
-        About: { screen: AboutStackNav },
-    },
-    {
-        contentOptions: {
-            items: ['MAIN', 'ABOUT'],
-        },
-    }
-)
-
-export default MainDrawerNav
