@@ -20,7 +20,7 @@ import planStyles from '../../features/plans/styles'
 
 import { Fonts } from '../../utils/fonts'
 
-import { HomeStack, AddStatusStack } from './home'
+import { HomeStack } from './home'
 
 const headerLogo = require('../../assets/icons/g-logo.png')
 
@@ -50,6 +50,7 @@ const PlansTabNav = createMaterialTopTabNavigator(
             },
             labelStyle: {
                 fontFamily: Fonts.MuliBold,
+                fontSize: responsiveFontSize(1.8)
             },
             indicatorStyle: {
                 backgroundColor: '#9663EF',
