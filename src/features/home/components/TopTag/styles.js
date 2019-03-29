@@ -11,13 +11,13 @@ export default StyleSheet.create({
         height: responsiveHeight(6.5),
         width: '100%',
         padding: 2,
-        backgroundColor: '#9663EF',
+        backgroundColor: '#FFFFFF',
     },
     labelText: {
         marginLeft: responsiveWidth(5),
-        fontFamily: Fonts.MuliSemiBold,
-        fontSize: responsiveFontSize(2.1),
-        color: '#ffffff',
+        fontFamily: Fonts.FredokaOne,
+        fontSize: responsiveFontSize(1.9),
+        color: '#4A4A4A',
     },
     addButton: {
         width: responsiveWidth(14),

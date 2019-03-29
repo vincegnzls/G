@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TouchableOpacity, Text, View, Platform } from 'react-native'
+import { responsiveHeight } from 'react-native-responsive-dimensions'
 import styles from './styles'
 
 class Tag extends Component {
@@ -12,27 +13,51 @@ class Tag extends Component {
     }
 
     renderTag = () => {
+        let currentOnPress
+
+        if (this.props.customOnPress) {
+            currentOnPress = this.props.customOnPress
+        } else if (this.props.onPress) {
+            currentOnPress = this.props.selected ? this.onPressSelected : this.onPress
+        }
+
         return (
             <TouchableOpacity
-                style={[styles.tag, { backgroundColor: this.props.color }]}
-                onPress={this.props.selected ? this.onPressSelected : this.onPress}
+                style={[
+                    styles.tag,
+                    {
+                        backgroundColor: this.props.color,
+                        marginLeft: 10,
+                        marginTop: responsiveHeight(1.5),
+                    },
+                ]}
+                onPress={currentOnPress}
             >
                 <View
                     style={[
                         {
                             backgroundColor: this.props.color,
                             paddingLeft: 15,
-                            paddingRight: 10,
+                            paddingRight: this.props.borderColor ? 15 : 10,
                             paddingBottom: 2,
                             paddingTop: 2,
                             borderTopLeftRadius: 15,
                             borderBottomLeftRadius: 15,
                             borderBottomRightRadius: this.props.count ? 0 : 15,
                             borderTopRightRadius: this.props.count ? 0 : 15,
+                            borderColor: this.props.borderColor ? this.props.borderColor : null,
+                            borderWidth: this.props.borderColor ? 0.5 : 0,
                         },
                     ]}
                 >
-                    <Text style={[styles.tagText]}>{this.props.text}</Text>
+                    <Text
+                        style={[
+                            styles.tagText,
+                            { color: this.props.fontColor ? this.props.fontColor : '#ffffff' },
+                        ]}
+                    >
+                        {this.props.text}
+                    </Text>
                 </View>
                 <View
                     style={{
@@ -50,10 +75,18 @@ class Tag extends Component {
     }
 
     renderSelectedTag = () => {
+        let currentOnPress
+
+        if (this.props.customOnPress) {
+            currentOnPress = this.props.customOnPress
+        } else if (this.props.onPress) {
+            currentOnPress = this.props.selected ? this.onPressSelected : this.onPress
+        }
+
         return (
             <TouchableOpacity
                 style={[styles.selectedTag, { backgroundColor: this.props.color }]}
-                onPress={this.props.selected ? this.onPressSelected : this.onPress}
+                onPress={currentOnPress}
             >
                 <View
                     style={[styles.selectedTagTextContainer, { backgroundColor: this.props.color }]}

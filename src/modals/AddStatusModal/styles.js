@@ -26,8 +26,8 @@ export default StyleSheet.create({
     imageLogo: {
         marginLeft: 10,
         marginRight: 10,
-        width: responsiveWidth(14),
-        height: responsiveWidth(14),
+        width: responsiveWidth(13),
+        height: responsiveWidth(13),
     },
     selectedTagsContainer: {
         flexDirection: 'row',
@@ -106,7 +106,7 @@ export default StyleSheet.create({
         borderWidth: 1,
         borderColor: '#D5D5D5',
         alignSelf: 'center',
-        fontFamily: Fonts.MuliLight,
+        fontFamily: Fonts.MuliRegular,
         fontSize: responsiveFontSize(1.7),
     },
 })

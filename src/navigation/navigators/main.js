@@ -50,7 +50,7 @@ const PlansTabNav = createMaterialTopTabNavigator(
             },
             labelStyle: {
                 fontFamily: Fonts.MuliBold,
-                fontSize: responsiveFontSize(1.8)
+                fontSize: responsiveFontSize(1.8),
             },
             indicatorStyle: {
                 backgroundColor: '#9663EF',

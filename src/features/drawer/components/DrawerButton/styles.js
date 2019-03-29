@@ -7,7 +7,7 @@ export default StyleSheet.create({
         height: responsiveWidth(9),
         borderRadius: responsiveWidth(25),
         borderWidth: 2,
-        borderColor: '#CC52FF',
+        borderColor: '#9663EF',
         backgroundColor: '#ffffff',
         marginLeft: 20,
     },

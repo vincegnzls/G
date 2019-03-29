@@ -9,8 +9,6 @@ import { Fonts } from '../../../../utils/fonts'
 export default StyleSheet.create({
     tag: {
         paddingBottom: Platform.OS === 'ios' ? 0 : 1,
-        marginLeft: 10,
-        marginTop: 10,
         flexDirection: 'row',
         borderRadius: 15,
         alignSelf: 'flex-start',

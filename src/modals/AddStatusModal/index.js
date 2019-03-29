@@ -41,9 +41,11 @@ class AddStatusModal extends Component {
     addTag = tag => {
         const tags = [...this.state.selectedTags]
 
-        tags.push(tag)
+        if (tags.length < 3) {
+            tags.push(tag)
 
-        this.setState({ selectedTags: tags })
+            this.setState({ selectedTags: tags })
+        }
     }
 
     removeTag = key => {
@@ -74,7 +76,7 @@ class AddStatusModal extends Component {
                     <View style={styles.selectedTagsContainer}>{this.renderSelectedTags()}</View>
                     <TextInput
                         style={styles.descriptionInput}
-                        placeholder="Add a short description"
+                        placeholder="Spill the details!"
                         multiline
                     />
 
