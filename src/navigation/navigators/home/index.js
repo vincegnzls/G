@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
-import { fromLeft } from 'react-navigation-transitions'
 import * as screenNames from '../../screen_names'
 
 import homeLogo from '../../../assets/icons/navigator/home.png'

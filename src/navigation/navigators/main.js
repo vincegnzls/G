@@ -6,9 +6,11 @@ import {
     responsiveWidth,
     responsiveFontSize,
 } from 'react-native-responsive-dimensions'
+import { fromBottom } from 'react-navigation-transitions'
 import * as screenNames from '../screen_names'
 
 import Home from '../../features/home'
+import AddStatusScreen from '../../features/home/containers/AddStatusScreen'
 import Friends from '../../features/friends'
 import Plans from '../../features/plans'
 import Invites from '../../features/invites'
@@ -103,7 +105,7 @@ const MainTabNav = createMaterialTopTabNavigator(
     }
 )
 
-export const MainStackNav = createStackNavigator(
+export const TabStackNav = createStackNavigator(
     {
         [screenNames.MAIN_TAB]: { screen: MainTabNav },
     },
@@ -125,5 +127,17 @@ export const MainStackNav = createStackNavigator(
             headerLeft: <DrawerButton />,
         },
         headerLayoutPreset: 'center',
+    }
+)
+
+export const MainStackNav = createStackNavigator(
+    {
+        [screenNames.TAB_STACK]: { screen: TabStackNav },
+        [screenNames.ADD_STATUS]: { screen: AddStatusScreen },
+    },
+    {
+        initialRouteName: screenNames.TAB_STACK,
+        headerMode: 'none',
+        transitionConfig: () => fromBottom(),
     }
 )

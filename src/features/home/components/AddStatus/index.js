@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import * as screenNames from '../../../../navigation/screen_names'
-
-import { setVisibility } from '../../../../modals/AddStatusModal/actions'
+import NavigationService from '../../../../navigation/service'
 
 class AddStatus extends Component {
     render() {
@@ -14,7 +13,7 @@ class AddStatus extends Component {
                     <Text style={styles.labelText}>Watcha wanna do today?</Text>
                     <TouchableOpacity
                         style={styles.addButton}
-                        onPress={() => this.props.setVisibility(true)}
+                        onPress={() => NavigationService.navigate(screenNames.ADD_STATUS)}
                     >
                         <Text style={styles.buttonText}>ADD</Text>
                     </TouchableOpacity>
@@ -24,17 +23,4 @@ class AddStatus extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-    visibility: state.addStatusModal.visibility,
-})
-
-const mapDispatchToProps = dispatch => {
-    return {
-        setVisibility: visibility => dispatch(setVisibility(visibility)),
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(AddStatus)
+export default AddStatus

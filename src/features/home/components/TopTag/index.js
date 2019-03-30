@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import * as screenNames from '../../../../navigation/screen_names'
-import Tag from '../../../../modals/AddStatusModal/components/Tag'
+import Tag from '../Tag'
 
-import { setVisibility } from '../../../../modals/AddStatusModal/actions'
+import NavigationService from '../../../../navigation/service'
 
 class TopTag extends Component {
     render() {
@@ -13,24 +13,15 @@ class TopTag extends Component {
             <View style={styles.container}>
                 <View style={styles.subContainer}>
                     <Text style={styles.labelText}>Most friends are G to</Text>
-                    <Tag text="EAT" color="#E68F4C" />
+                    <Tag
+                        text="EAT"
+                        color="#E68F4C"
+                        onPress={() => NavigationService.navigate('STACK3')}
+                    />
                 </View>
             </View>
         )
     }
 }
 
-const mapStateToProps = state => ({
-    visibility: state.addStatusModal.visibility,
-})
-
-const mapDispatchToProps = dispatch => {
-    return {
-        setVisibility: visibility => dispatch(setVisibility(visibility)),
-    }
-}
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TopTag)
+export default TopTag

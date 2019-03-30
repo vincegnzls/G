@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Image, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 
-import Tag from '../../../../modals/AddStatusModal/components/Tag'
+import Tag from '../Tag'
 
 class Post extends Component {
     render() {

@@ -5,8 +5,6 @@ import { connect } from 'react-redux'
 import { createRootNavigator } from './navigators'
 import NavigationService from './service'
 
-import AddStatusModal from '../modals/AddStatusModal'
-
 class ApplicationNavigatorContainer extends Component {
     render() {
         const Navigator = createRootNavigator()
@@ -22,7 +20,6 @@ class ApplicationNavigatorContainer extends Component {
                             NavigationService.setTopLevelNavigator(navigatorRef)
                         }}
                     />
-                    <AddStatusModal />
                 </View>
             </SafeAreaView>
         )

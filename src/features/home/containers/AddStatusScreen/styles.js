@@ -4,7 +4,7 @@ import {
     responsiveFontSize,
     responsiveWidth,
 } from 'react-native-responsive-dimensions'
-import { Fonts } from '../../utils/fonts'
+import { Fonts } from '../../../../utils/fonts'
 
 export default StyleSheet.create({
     container: {

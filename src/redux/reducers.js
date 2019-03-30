@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import addStatusModalData from '../modals/AddStatusModal/reducers'
+import homeData from '../features/home/reducers'
 
 export default combineReducers({
-    addStatusModal: addStatusModalData,
+    homeData,
 })
