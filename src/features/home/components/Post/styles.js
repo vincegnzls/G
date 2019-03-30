@@ -9,8 +9,8 @@ import { Fonts } from '../../../../utils/fonts'
 export default StyleSheet.create({
     container: {
         flexDirection: 'row',
-        paddingTop: responsiveWidth(3),
-        paddingBottom: responsiveWidth(3),
+        paddingTop: responsiveHeight(1.3),
+        paddingBottom: responsiveHeight(1.3),
         borderColor: '#BCBABA',
         borderBottomWidth: 0.5,
     },
@@ -59,5 +59,8 @@ export default StyleSheet.create({
         fontFamily: Fonts.MuliLight,
         fontSize: responsiveFontSize(1.5),
         color: '#9B9B9B',
+    },
+    tagContainer: {
+        marginTop: responsiveHeight(1.4),
     },
 })

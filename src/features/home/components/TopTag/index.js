@@ -17,6 +17,7 @@ class TopTag extends Component {
                         text="EAT"
                         color="#E68F4C"
                         onPress={() => NavigationService.navigate('STACK3')}
+                        containerStyles={styles.tagContainer}
                     />
                 </View>
             </View>

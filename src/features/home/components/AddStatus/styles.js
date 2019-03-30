@@ -8,9 +8,10 @@ import { Fonts } from '../../../../utils/fonts'
 
 export default StyleSheet.create({
     container: {
-        height: responsiveHeight(6.5),
+        flexDirection: 'row',
+        paddingTop: responsiveWidth(2.9),
+        paddingBottom: responsiveWidth(2.9),
         width: '100%',
-        padding: 2,
         backgroundColor: '#9663EF',
     },
     labelText: {

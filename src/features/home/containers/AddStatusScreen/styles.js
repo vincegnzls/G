@@ -109,4 +109,8 @@ export default StyleSheet.create({
         fontFamily: Fonts.MuliRegular,
         fontSize: responsiveFontSize(1.7),
     },
+    tagContainer: {
+        marginTop: responsiveHeight(1.2),
+        marginLeft: responsiveHeight(1.2),
+    },
 })

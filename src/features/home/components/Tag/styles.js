@@ -11,7 +11,6 @@ export default StyleSheet.create({
         paddingBottom: Platform.OS === 'ios' ? 0 : 1,
         flexDirection: 'row',
         borderRadius: 15,
-        alignSelf: 'flex-start',
     },
     tagText: {
         fontFamily: Fonts.NunitoExtraBold,

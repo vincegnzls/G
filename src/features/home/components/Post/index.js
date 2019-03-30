@@ -15,14 +15,27 @@ class Post extends Component {
                 <View style={styles.midContainer}>
                     <Text style={styles.nameText}>Vince Gonzales</Text>
                     <View style={styles.tagsContainer}>
-                        <Tag color="#ffffff" text="EAT" fontColor="#6B6B6B" borderColor="#6B6B6B" />
+                        <Tag
+                            color="#ffffff"
+                            text="EAT"
+                            fontColor="#6B6B6B"
+                            borderColor="#6B6B6B"
+                            containerStyles={styles.tagContainer}
+                        />
                         <Tag
                             color="#ffffff"
                             text="SLEEP"
                             fontColor="#6B6B6B"
                             borderColor="#6B6B6B"
+                            containerStyles={styles.tagContainer}
                         />
-                        <Tag color="#ffffff" text="EAT" fontColor="#6B6B6B" borderColor="#6B6B6B" />
+                        <Tag
+                            color="#ffffff"
+                            text="EAT"
+                            fontColor="#6B6B6B"
+                            borderColor="#6B6B6B"
+                            containerStyles={styles.tagContainer}
+                        />
                     </View>
                     <Text style={styles.detailsText}>HOHOL g?</Text>
                 </View>

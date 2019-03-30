@@ -27,9 +27,8 @@ class Tag extends Component {
                     styles.tag,
                     {
                         backgroundColor: this.props.color,
-                        marginLeft: 10,
-                        marginTop: responsiveHeight(1.5),
                     },
+                    { ...this.props.containerStyles },
                 ]}
                 onPress={currentOnPress}
             >

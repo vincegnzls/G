@@ -63,9 +63,7 @@ class AddStatusScreen extends Component {
     }
 
     onUpdateStatusTags = () => {
-        if (this.state.selectedTags.length) {
-            this.props.updateStatusTags(this.state.selectedTags)
-        }
+        this.props.updateStatusTags(this.state.selectedTags)
 
         NavigationService.navigate(screenNames.HOME)
     }
@@ -101,14 +99,69 @@ class AddStatusScreen extends Component {
                             }}
                         >
                             <View style={styles.tagsContentContainer}>
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} count={14} />
+                                <Tag
+                                    color="#E68F4C"
+                                    text="EAT"
+                                    onPress={this.addTag}
+                                    count={14}
+                                    containerStyles={styles.tagContainer}
+                                />
                                 <Tag
                                     color="#C474CE"
                                     text="DRINK"
                                     onPress={this.addTag}
                                     count={10}
+                                    containerStyles={styles.tagContainer}
                                 />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} count={7} />
+                                <Tag
+                                    color="#844DE5"
+                                    text="MOVIE"
+                                    onPress={this.addTag}
+                                    count={7}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#E68F4C"
+                                    text="EAT"
+                                    onPress={this.addTag}
+                                    count={14}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#C474CE"
+                                    text="DRINK"
+                                    onPress={this.addTag}
+                                    count={10}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#844DE5"
+                                    text="MOVIE"
+                                    onPress={this.addTag}
+                                    count={7}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#E68F4C"
+                                    text="EAT"
+                                    onPress={this.addTag}
+                                    count={14}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#C474CE"
+                                    text="DRINK"
+                                    onPress={this.addTag}
+                                    count={10}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#844DE5"
+                                    text="MOVIE"
+                                    onPress={this.addTag}
+                                    count={7}
+                                    containerStyles={styles.tagContainer}
+                                />
                             </View>
                         </View>
                         <Text style={styles.sectionTitle}>Food and Drink</Text>
@@ -121,36 +174,24 @@ class AddStatusScreen extends Component {
                             }}
                         >
                             <View style={styles.tagsContentContainer}>
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
-                            </View>
-                        </View>
-                        <Text style={styles.sectionTitle}>Food and Drink</Text>
-                        <View
-                            style={{
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                width: '100%',
-                                marginTop: 5,
-                            }}
-                        >
-                            <View style={styles.tagsContentContainer}>
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
-                                <Tag color="#E68F4C" text="EAT" onPress={this.addTag} />
-                                <Tag color="#C474CE" text="DRINK" onPress={this.addTag} />
-                                <Tag color="#844DE5" text="MOVIE" onPress={this.addTag} />
+                                <Tag
+                                    color="#E68F4C"
+                                    text="EAT"
+                                    onPress={this.addTag}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#C474CE"
+                                    text="DRINK"
+                                    onPress={this.addTag}
+                                    containerStyles={styles.tagContainer}
+                                />
+                                <Tag
+                                    color="#844DE5"
+                                    text="MOVIE"
+                                    onPress={this.addTag}
+                                    containerStyles={styles.tagContainer}
+                                />
                             </View>
                         </View>
                     </ScrollView>
