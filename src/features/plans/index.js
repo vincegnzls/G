@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { View, Image, Text } from 'react-native'
+import { View, Text } from 'react-native'
 import styles from './styles'
-import plansLogo from '../../assets/icons/navigator/plans.png'
-import plansSelectedLogo from '../../assets/icons/navigator/plans-selected.png'
 
 class Plans extends Component {
     render() {

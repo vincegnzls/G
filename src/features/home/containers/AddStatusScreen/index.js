@@ -1,37 +1,40 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, ScrollView, Image, TextInput } from 'react-native'
 import NavigationService from '../../../../navigation/service'
 import BackButton from '../../../../components/BackButton'
 import Tag from '../../components/Tag'
+import TagSection from '../../components/TagSection'
 import styles from './styles'
 import logo from '../../../../assets/icons/g-logo.png'
 import * as actions from '../../actions'
 
 import * as screenNames from '../../../../navigation/screen_names'
 
-class AddStatusScreen extends Component {
-    state = {
-        selectedTags: [],
-    }
+const AddStatusScreen = props => {
+    const [selectedTags, setSelectedTags] = useState([])
 
-    componentDidMount() {
-        if (this.props.statusTags.length) {
-            this.setState({ selectedTags: this.props.statusTags })
+    useEffect(() => {
+        if (props.statusTags.length) {
+            setSelectedTags(props.statusTags)
         }
-    }
+    }, [])
 
-    renderSelectedTags = () => {
-        let tagComponents = this.state.selectedTags.map((item, key) => (
-            <Tag
-                color={item.color}
-                text={item.text}
-                key={key}
-                index={key}
-                selected={item.selected}
-                onPress={this.removeTag}
-            />
-        ))
+    const renderSelectedTags = () => {
+        let tagComponents = selectedTags.map((item, key) => {
+            const id = key + 1
+
+            return (
+                <Tag
+                    color={item.color}
+                    text={item.text}
+                    key={id}
+                    index={key}
+                    selected={item.selected}
+                    onPress={removeTag}
+                />
+            )
+        })
 
         if (!tagComponents.length) {
             tagComponents = (
@@ -44,166 +47,97 @@ class AddStatusScreen extends Component {
         return tagComponents
     }
 
-    addTag = tag => {
-        const tags = [...this.state.selectedTags]
-
-        if (tags.length < 3) {
-            tags.push(tag)
-
-            this.setState({ selectedTags: tags })
-        }
+    const addTag = tag => {
+        if (selectedTags.length < 3) setSelectedTags(selectedTags.concat(tag))
     }
 
-    removeTag = key => {
-        const tags = [...this.state.selectedTags]
-
+    const removeTag = key => {
+        const tags = [...selectedTags]
         tags.splice(key, 1)
 
-        this.setState({ selectedTags: tags })
+        setSelectedTags(tags)
     }
 
-    onUpdateStatusTags = () => {
-        this.props.updateStatusTags(this.state.selectedTags)
+    const onUpdateStatusTags = () => {
+        props.updateStatusTags(selectedTags)
 
         NavigationService.navigate(screenNames.HOME)
     }
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={{ alignItems: 'flex-start' }}>
-                    <BackButton onPress={() => NavigationService.navigate(screenNames.HOME)} />
-                </View>
-                <View style={styles.headerContainer}>
-                    <Text style={styles.headerText}>I'm</Text>
-                    <Image source={logo} style={styles.imageLogo} />
-                    <Text style={styles.headerText}>to</Text>
-                </View>
-                <View style={styles.selectedTagsContainer}>{this.renderSelectedTags()}</View>
-                <TextInput
-                    style={styles.descriptionInput}
-                    placeholder="Spill the details!"
-                    multiline
-                />
-
-                <View style={styles.tagSelectionContainer}>
-                    <Text style={styles.tagSelectionTitle}>Select up to 3 Tags</Text>
-                    <ScrollView style={styles.tagsScrollView}>
-                        <Text style={styles.sectionTitle}>Suggestions</Text>
-                        <View
-                            style={{
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                width: '100%',
-                                marginTop: 5,
-                            }}
-                        >
-                            <View style={styles.tagsContentContainer}>
-                                <Tag
-                                    color="#E68F4C"
-                                    text="EAT"
-                                    onPress={this.addTag}
-                                    count={14}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#C474CE"
-                                    text="DRINK"
-                                    onPress={this.addTag}
-                                    count={10}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#844DE5"
-                                    text="MOVIE"
-                                    onPress={this.addTag}
-                                    count={7}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#E68F4C"
-                                    text="EAT"
-                                    onPress={this.addTag}
-                                    count={14}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#C474CE"
-                                    text="DRINK"
-                                    onPress={this.addTag}
-                                    count={10}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#844DE5"
-                                    text="MOVIE"
-                                    onPress={this.addTag}
-                                    count={7}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#E68F4C"
-                                    text="EAT"
-                                    onPress={this.addTag}
-                                    count={14}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#C474CE"
-                                    text="DRINK"
-                                    onPress={this.addTag}
-                                    count={10}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#844DE5"
-                                    text="MOVIE"
-                                    onPress={this.addTag}
-                                    count={7}
-                                    containerStyles={styles.tagContainer}
-                                />
-                            </View>
-                        </View>
-                        <Text style={styles.sectionTitle}>Food and Drink</Text>
-                        <View
-                            style={{
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                width: '100%',
-                                marginTop: 5,
-                            }}
-                        >
-                            <View style={styles.tagsContentContainer}>
-                                <Tag
-                                    color="#E68F4C"
-                                    text="EAT"
-                                    onPress={this.addTag}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#C474CE"
-                                    text="DRINK"
-                                    onPress={this.addTag}
-                                    containerStyles={styles.tagContainer}
-                                />
-                                <Tag
-                                    color="#844DE5"
-                                    text="MOVIE"
-                                    onPress={this.addTag}
-                                    containerStyles={styles.tagContainer}
-                                />
-                            </View>
-                        </View>
-                    </ScrollView>
-                </View>
-                <View style={styles.saveButtonContainer}>
-                    <TouchableOpacity style={styles.saveButton} onPress={this.onUpdateStatusTags}>
-                        <Text style={styles.saveText}>SAVE</Text>
-                    </TouchableOpacity>
-                </View>
+    return (
+        <View style={styles.container}>
+            <View style={{ alignItems: 'flex-start' }}>
+                <BackButton onPress={() => NavigationService.navigate(screenNames.HOME)} />
             </View>
-        )
-    }
+            <View style={styles.headerContainer}>
+                <Text style={styles.headerText}>I'm</Text>
+                <Image source={logo} style={styles.imageLogo} />
+                <Text style={styles.headerText}>to</Text>
+            </View>
+            <View style={styles.selectedTagsContainer}>{renderSelectedTags()}</View>
+            <TextInput style={styles.descriptionInput} placeholder="Spill the details!" multiline />
+
+            <View style={styles.tagSelectionContainer}>
+                <Text style={styles.tagSelectionTitle}>Select up to 3 Tags</Text>
+                <ScrollView style={styles.tagsScrollView}>
+                    <TagSection
+                        title="Suggestions"
+                        tags={[
+                            <Tag
+                                color="#E68F4C"
+                                text="EAT"
+                                onPress={addTag}
+                                count={14}
+                                containerStyles={styles.tagContainer}
+                            />,
+                            <Tag
+                                color="#C474CE"
+                                text="DRINK"
+                                onPress={addTag}
+                                count={10}
+                                containerStyles={styles.tagContainer}
+                            />,
+                            <Tag
+                                color="#844DE5"
+                                text="MOVIE"
+                                onPress={addTag}
+                                count={7}
+                                containerStyles={styles.tagContainer}
+                            />,
+                        ]}
+                    />
+                    <TagSection
+                        title="Food and Drink"
+                        tags={[
+                            <Tag
+                                color="#E68F4C"
+                                text="EAT"
+                                onPress={addTag}
+                                containerStyles={styles.tagContainer}
+                            />,
+                            <Tag
+                                color="#C474CE"
+                                text="DRINK"
+                                onPress={addTag}
+                                containerStyles={styles.tagContainer}
+                            />,
+                            <Tag
+                                color="#844DE5"
+                                text="MOVIE"
+                                onPress={addTag}
+                                containerStyles={styles.tagContainer}
+                            />,
+                        ]}
+                    />
+                </ScrollView>
+            </View>
+            <View style={styles.saveButtonContainer}>
+                <TouchableOpacity style={styles.saveButton} onPress={onUpdateStatusTags}>
+                    <Text style={styles.saveText}>SAVE</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
 }
 
 const mapStateToProps = state => ({

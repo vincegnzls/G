@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
@@ -10,35 +10,37 @@ import editIcon from '../../../../assets/icons/edit.png'
 
 import Tag from '../Tag'
 
-class Status extends Component {
-    renderTags = () => {
-        return this.props.statusTags.map((tag, key) => (
-            <Tag
-                key={key}
-                color={tag.color}
-                text={tag.text}
-                containerStyles={styles.tagContainer}
-            />
-        ))
+const Status = props => {
+    const renderTags = () => {
+        return props.statusTags.map((tag, key) => {
+            const id = key + 1
+
+            return (
+                <Tag
+                    key={id}
+                    color={tag.color}
+                    text={tag.text}
+                    containerStyles={styles.tagContainer}
+                />
+            )
+        })
     }
 
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.leftContainer}>
-                    <View style={styles.tagsContainer}>{this.renderTags()}</View>
-                    <Text style={styles.detailText}>Anyone g to drink Lan kwai tonight?</Text>
-                </View>
-                <View style={styles.rightContainer}>
-                    <TouchableOpacity
-                        onPress={() => NavigationService.navigate(screenNames.ADD_STATUS)}
-                    >
-                        <Image source={editIcon} style={styles.editImage} />
-                    </TouchableOpacity>
-                </View>
+    return (
+        <View style={styles.container}>
+            <View style={styles.leftContainer}>
+                <View style={styles.tagsContainer}>{renderTags()}</View>
+                <Text style={styles.detailText}>Anyone g to drink Lan kwai tonight?</Text>
             </View>
-        )
-    }
+            <View style={styles.rightContainer}>
+                <TouchableOpacity
+                    onPress={() => NavigationService.navigate(screenNames.ADD_STATUS)}
+                >
+                    <Image source={editIcon} style={styles.editImage} />
+                </TouchableOpacity>
+            </View>
+        </View>
+    )
 }
 
 const mapStateToProps = state => ({

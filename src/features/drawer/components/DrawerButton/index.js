@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { TouchableOpacity } from 'react-native'
 import styles from './styles'
 import NavigationService from '../../../../navigation/service'
 
-class DrawerButton extends Component {
-    onDrawerPress = () => {
+const DrawerButton = props => {
+    const onDrawerPress = () => {
         NavigationService.toggleDrawer()
     }
 
-    render() {
-        return <TouchableOpacity style={styles.drawerButton} onPress={this.onDrawerPress} />
-    }
+    return <TouchableOpacity style={styles.drawerButton} onPress={onDrawerPress} />
 }
 
 export default DrawerButton
