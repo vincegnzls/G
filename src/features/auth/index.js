@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, Image, Text } from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
 import NavigationService from '../../navigation/service'
 import styles from './styles'
 import logo from '../../assets/icons/g-logo.png'
@@ -12,6 +13,10 @@ const Login = props => {
     const onLogin = () => {
         NavigationService.navigate(screenNames.MAIN)
     }
+
+    useEffect(() => {
+        SplashScreen.hide()
+    }, [])
 
     return (
         <View style={styles.container}>

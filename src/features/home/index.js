@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { View } from 'react-native'
+import SplashScreen from 'react-native-splash-screen'
 import styles from './styles'
 import * as actions from './actions'
 
@@ -9,9 +10,9 @@ import TopTag from './components/TopTag'
 import UserPosts from './components/UserPosts'
 import Status from './components/Status'
 
-class Home extends Component {
-    renderHeader = () => {
-        if (this.props.statusTags.length) {
+const Home = props => {
+    const renderHeader = () => {
+        if (props.statusTags.length) {
             return <Status />
         }
 
@@ -23,14 +24,16 @@ class Home extends Component {
         )
     }
 
-    render() {
-        return (
-            <View style={styles.container}>
-                {this.renderHeader()}
-                <UserPosts />
-            </View>
-        )
-    }
+    useEffect(() => {
+        SplashScreen.hide()
+    }, [])
+
+    return (
+        <View style={styles.container}>
+            {renderHeader()}
+            <UserPosts />
+        </View>
+    )
 }
 
 const mapStateToProps = state => ({

@@ -43,6 +43,7 @@
 		49416E7EFB5B4ABEAFFECBDA /* Muli-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3CB585CA3324A8796AB91F7 /* Muli-BlackItalic.ttf */; };
 		4C4ECDB2DF694A799B186F16 /* FredokaOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B143D70A10074030B2B394DB /* FredokaOne-Regular.ttf */; };
 		535924B24D6F40899E609DE0 /* Muli-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 46150FFD5A764F9C8687BE3E /* Muli-Regular.ttf */; };
+		61DD4F2C2309578F00323A77 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61DD4F2B2309577A00323A77 /* libSplashScreen.a */; };
 		62DCAC60C2214E48856CC0D2 /* Muli-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2882A1C0CF9F4AFC8B06A66A /* Muli-ExtraBoldItalic.ttf */; };
 		6ECCEF9BBE404E098F9F03F7 /* Nunito-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D5FBFEBE68F4998B9B773B1 /* Nunito-Bold.ttf */; };
 		76C62271CBF14063B5D0209F /* Nunito-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 43890430B7DD496C9A16B0E8 /* Nunito-SemiBoldItalic.ttf */; };
@@ -318,6 +319,13 @@
 			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
 			remoteInfo = "RNGestureHandler-tvOS";
 		};
+		61DD4F2A2309577A00323A77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 61DD4F022309577900323A77 /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		78C398B81ACF4ADC00677621 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */;
@@ -377,6 +385,7 @@
 		4998EBDE13FE4084BD77EC08 /* Nunito-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-BlackItalic.ttf"; path = "../src/assets/fonts/Nunito-BlackItalic.ttf"; sourceTree = "<group>"; };
 		4DB6D278AAF74A9DB3A8A2D7 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
+		61DD4F022309577900323A77 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		7377320DB02048A096C809CC /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
 		7507C6231C174B478527E0C1 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
 		76BDD55FA1D945798B5C6232 /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -417,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
+				61DD4F2C2309578F00323A77 /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -639,6 +649,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		61DD4F032309577900323A77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				61DD4F2B2309577A00323A77 /* libSplashScreen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		78C398B11ACF4ADC00677621 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -651,6 +669,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				61DD4F022309577900323A77 /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -871,6 +890,10 @@
 				{
 					ProductGroup = 618D406B224B3D840041E7DA /* Products */;
 					ProjectRef = D7F2229498F24CFBA05A316C /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = 61DD4F032309577900323A77 /* Products */;
+					ProjectRef = 61DD4F022309577900323A77 /* SplashScreen.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1113,6 +1136,13 @@
 			fileType = archive.ar;
 			path = "libRNGestureHandler-tvOS.a";
 			remoteRef = 618D4071224B3D850041E7DA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		61DD4F2B2309577A00323A77 /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 61DD4F2A2309577A00323A77 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -1361,6 +1391,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = G/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1383,6 +1414,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios/**",
 				);
 				INFOPLIST_FILE = G/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
