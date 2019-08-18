@@ -119,7 +119,7 @@ export const TabStackNav = createStackNavigator(
                 shadowColor: '#000000',
                 shadowOffset: { height: 0, width: 0 },
                 borderBottomWidth: 0,
-                height: responsiveHeight(8),
+                height: responsiveWidth(16),
                 paddingBottom: Platform.OS === 'ios' ? responsiveHeight(1.5) : 0,
                 paddingTop: Platform.OS === 'ios' ? responsiveHeight(2) : 0,
             },
