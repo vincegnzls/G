@@ -66,7 +66,22 @@ export default StyleSheet.create({
         fontSize: responsiveFontSize(2.2),
     },
     buttonContainer: {
-        height: responsiveWidth(35),
+        height: responsiveWidth(30),
         width: '100%',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    saveButton: {
+        height: '49%',
+        width: '100%',
+        backgroundColor: '#7ACC6B',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    saveText: {
+        fontFamily: Fonts.MuliBold,
+        fontSize: responsiveFontSize(2),
+        color: '#ffffff',
     },
 })

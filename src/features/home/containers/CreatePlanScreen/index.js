@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import NavigationService from '../../../../navigation/service'
 import BackButton from '../../../../components/BackButton'
 import BigTag from '../../components/BigTag'
@@ -50,7 +50,11 @@ const CreatePlanScreen = props => {
                     <TextInput style={styles.gForTextInput} placeholder="4:00" />
                 </View>
             </View>
-            <View style={styles.buttonContainer} />
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.saveButton} onPress={null}>
+                    <Text style={styles.saveText}>CREATE PLAN 🎉</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
