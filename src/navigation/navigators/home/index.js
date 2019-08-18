@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image } from 'react-native'
 import { createStackNavigator } from 'react-navigation'
-import * as screenNames from '../../screen_names'
+import * as screenNames from '../../screenNames'
 
 import homeLogo from '../../../assets/icons/navigator/home.png'
 import homeSelectedLogo from '../../../assets/icons/navigator/home-selected.png'

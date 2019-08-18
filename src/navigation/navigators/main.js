@@ -7,10 +7,11 @@ import {
     responsiveFontSize,
 } from 'react-native-responsive-dimensions'
 import { fromBottom } from 'react-navigation-transitions'
-import * as screenNames from '../screen_names'
+import * as screenNames from '../screenNames'
 
 import Home from '../../features/home'
 import AddStatusScreen from '../../features/home/containers/AddStatusScreen'
+import CreatePlanScreen from '../../features/home/containers/CreatePlanScreen'
 import Friends from '../../features/friends'
 import Plans from '../../features/plans'
 import Invites from '../../features/invites'
@@ -134,6 +135,7 @@ export const MainStackNav = createStackNavigator(
     {
         [screenNames.TAB_STACK]: { screen: TabStackNav },
         [screenNames.ADD_STATUS]: { screen: AddStatusScreen },
+        [screenNames.CREATE_PLAN]: { screen: CreatePlanScreen },
     },
     {
         initialRouteName: screenNames.TAB_STACK,

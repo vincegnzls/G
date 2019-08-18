@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './styles'
 import * as actions from '../../actions'
-import * as screenNames from '../../../../navigation/screen_names'
+import * as screenNames from '../../../../navigation/screenNames'
 import NavigationService from '../../../../navigation/service'
 
 import editIcon from '../../../../assets/icons/edit.png'

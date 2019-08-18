@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
-import * as screenNames from '../../../../navigation/screen_names'
+import * as screenNames from '../../../../navigation/screenNames'
 import NavigationService from '../../../../navigation/service'
 
 const AddStatus = props => {

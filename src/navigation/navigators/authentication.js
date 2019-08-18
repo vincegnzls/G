@@ -1,6 +1,6 @@
 import { createStackNavigator } from 'react-navigation'
 import Login from '../../features/auth'
-import * as screenNames from '../screen_names'
+import * as screenNames from '../screenNames'
 
 export default createStackNavigator(
     {

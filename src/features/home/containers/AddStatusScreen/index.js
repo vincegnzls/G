@@ -9,7 +9,7 @@ import styles from './styles'
 import logo from '../../../../assets/icons/g-logo.png'
 import * as actions from '../../actions'
 
-import * as screenNames from '../../../../navigation/screen_names'
+import * as screenNames from '../../../../navigation/screenNames'
 
 const AddStatusScreen = props => {
     const [selectedTags, setSelectedTags] = useState([])

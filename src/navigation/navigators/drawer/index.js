@@ -1,8 +1,8 @@
 import { createDrawerNavigator, createStackNavigator } from 'react-navigation'
-import * as screenNames from '../../screen_names'
+import * as screenNames from '../../screenNames'
 
-import Settings from '../../../features/drawer/containers/settings'
-import About from '../../../features/drawer/containers/about'
+import Settings from '../../../features/drawer/containers/Settings'
+import About from '../../../features/drawer/containers/About'
 
 import { MainStackNav } from '../main'
 import DrawerContent from './components/DrawerContent'

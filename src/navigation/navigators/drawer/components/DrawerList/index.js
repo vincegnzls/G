@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, ScrollView } from 'react-native'
 import { responsiveHeight } from 'react-native-responsive-dimensions'
-import * as screenNames from '../../../../screen_names'
+import * as screenNames from '../../../../screenNames'
 import DrawerItem from '../DrawerItem'
 import NavigationService from '../../../../service'
 

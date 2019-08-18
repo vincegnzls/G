@@ -7,7 +7,7 @@ import styles from './styles'
 import logo from '../../assets/icons/g-logo.png'
 import LoginButton from './components/LoginButton'
 
-import * as screenNames from '../../navigation/screen_names'
+import * as screenNames from '../../navigation/screenNames'
 
 const Login = props => {
     const onLogin = () => {
