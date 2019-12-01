@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
+import TimePicker from 'react-native-24h-timepicker'
 import NavigationService from '../../../../navigation/service'
 import BackButton from '../../../../components/BackButton'
 import BigTag from '../../components/BigTag'
@@ -8,7 +9,20 @@ import styles from './styles'
 import * as screenNames from '../../../../navigation/screenNames'
 
 const CreatePlanScreen = props => {
+    const [time, setTime] = useState(null)
+
+    const timePicker = useRef(null)
+
     useEffect(() => {}, [])
+
+    const onCancel = () => {
+        timePicker.current.close()
+    }
+
+    const onConfirm = (hour, minute) => {
+        setTime(`${hour}:${minute}`)
+        timePicker.current.close()
+    }
 
     return (
         <View style={styles.container}>
@@ -29,14 +43,32 @@ const CreatePlanScreen = props => {
                     <Text style={styles.gForText}>G for</Text>
                 </View>
                 <View style={styles.gForContainer}>
-                    <TextInput style={styles.gForTextInput} placeholder="What do you wanna do?" />
+                    <TextInput
+                        style={styles.gForTextInput}
+                        placeholder="What do you wanna do?"
+                        maxLength={15}
+                    />
                 </View>
                 <View style={styles.gTitleContainer}>
                     <Text style={styles.gForText}>at</Text>
                 </View>
-                <View style={styles.gForContainer}>
-                    <TextInput style={styles.gForTextInput} placeholder="4:00" />
-                </View>
+                <TouchableOpacity
+                    style={styles.gForContainer}
+                    onPress={() => timePicker.current.open()}
+                >
+                    <TextInput
+                        style={styles.gForTextInput}
+                        placeholder="4:00"
+                        editable={false}
+                        value={time}
+                        onTouchStart={() => timePicker.current.open()}
+                    />
+                </TouchableOpacity>
+                <TimePicker
+                    ref={timePicker}
+                    onCancel={() => onCancel()}
+                    onConfirm={(hour, minute) => onConfirm(hour, minute)}
+                />
                 <View style={styles.gTitleContainer}>
                     <Text style={styles.gForText}>in</Text>
                 </View>
@@ -51,7 +83,10 @@ const CreatePlanScreen = props => {
                 </View>
             </View>
             <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.saveButton} onPress={null}>
+                <TouchableOpacity
+                    style={styles.saveButton}
+                    onPress={() => timePicker.current.open()}
+                >
                     <Text style={styles.saveText}>CREATE PLAN 🎉</Text>
                 </TouchableOpacity>
             </View>

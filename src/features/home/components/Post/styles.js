@@ -8,25 +8,32 @@ import { Fonts } from '../../../../utils/fonts'
 
 export default StyleSheet.create({
     container: {
-        flexDirection: 'row',
+        display: 'flex',
+        flexDirection: 'column',
         paddingTop: responsiveHeight(1.3),
         paddingBottom: responsiveHeight(1.3),
+        paddingLeft: responsiveWidth(4),
+        paddingRight: responsiveWidth(4),
         borderColor: '#BCBABA',
         borderBottomWidth: 0.5,
+    },
+    row: {
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
     },
     button: {},
     leftContainer: {
         flex: 2,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     midContainer: {
         flex: 6,
         flexDirection: 'column',
     },
     rightContainer: {
-        flex: 1,
+        flex: 2,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
     imageContainer: {
         width: responsiveWidth(13),
@@ -48,7 +55,7 @@ export default StyleSheet.create({
     },
     tagsContainer: {
         flexDirection: 'row',
-        marginBottom: responsiveHeight(1.5),
+        justifyContent: 'space-between',
     },
     detailsText: {
         fontFamily: Fonts.MuliLight,

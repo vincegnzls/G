@@ -6,5 +6,11 @@ export const Fonts = {
     MuliSemiBold: 'Muli-SemiBold',
     MuliBold: 'Muli-Bold',
     MuliExtraBold: 'Muli-ExtraBold',
+    RalewayExtraLight: 'Raleway-ExtraLight',
+    RalewayLight: 'Raleway-Light',
+    RalewayRegular: 'Raleway-Regular',
+    RalewaySemiBold: 'Raleway-SemiBold',
+    RalewayBold: 'Raleway-Bold',
+    RalewayExtraBold: 'Raleway-ExtraBold',
     NunitoExtraBold: 'Nunito-ExtraBold',
 }
